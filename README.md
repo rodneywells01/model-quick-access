@@ -4,42 +4,62 @@ A simple Chrome extension that provides quick access to major LLM web interfaces
 
 ## Features
 
-- Quick access to popular AI models:
-  - ChatGPT
-  - Google Gemini
-  - Claude
-  - Perplexity
-  - Grok
-  - Microsoft Copilot
-- Clean, modern popup interface
-- One-click access to each model's website
+- Quick access to popular AI models: ChatGPT, Gemini, Claude, Perplexity, Grok
+- Compact dark-themed popup with real brand SVG logos
+- One-click access — opens each model's website in a new tab
+- Manifest V3, no special permissions required
 
-## Installation
+## Setup
 
-1. Clone or download this repository
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" in the top right corner
-4. Click "Load unpacked"
-5. Select the folder containing this extension
-6. The extension icon should now appear in your Chrome toolbar
+### Prerequisites
 
-## Usage
+- Google Chrome (or any Chromium-based browser)
+- Git
 
-1. Click the extension icon in your Chrome toolbar
-2. A popup will appear with icons for each AI model
-3. Click on any model icon to open its website in a new tab
+### Clone the repo
 
-## Files
+```bash
+git clone https://github.com/rodneywells01/model-quick-access.git
+cd model-quick-access
+```
 
-- `manifest.json` - Chrome extension configuration
-- `popup.html` - Popup interface HTML
-- `popup.css` - Popup styling
-- `popup.js` - Popup JavaScript
-- `icons/` - Extension icons in various sizes
+### Load the extension in Chrome
 
-## Development
+1. Open Chrome and go to `chrome://extensions/`
+2. Toggle **Developer mode** on (top-right corner)
+3. Click **Load unpacked**
+4. Select the root of this repository (the folder containing `manifest.json`)
+5. The extension icon will appear in your toolbar — click it to open the popup
 
-This is a simple Chrome extension with no build process required. Just edit the files and reload the extension in Chrome to see your changes.
+> **Tip:** If the icon doesn't appear, click the puzzle-piece icon in the toolbar and pin **Model Quick Access**.
+
+### Making changes
+
+There is no build step. Edit the source files directly and reload:
+
+1. Make your changes to `popup.html`, `popup.css`, or any other file
+2. Go back to `chrome://extensions/`
+3. Click the **reload** button (circular arrow) on the Model Quick Access card
+4. Click the extension icon to see your changes
+
+## Project structure
+
+```
+├── manifest.json          # Chrome extension manifest (V3)
+├── popup.html             # Popup markup
+├── popup.css              # Popup styles
+├── popup.js               # Popup script
+└── icons/
+    ├── icon16.png         # Toolbar icon
+    ├── icon48.png         # Extensions page icon
+    ├── icon128.png        # Chrome Web Store icon
+    └── logos/             # Brand SVGs displayed in the popup
+        ├── chatgpt.svg
+        ├── claude.svg
+        ├── gemini.svg
+        ├── grok.svg
+        └── perplexity.svg
+```
 
 ## License
 
